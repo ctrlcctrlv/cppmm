@@ -2402,7 +2402,8 @@ int main(int argc_, const char** argv_) {
 
     project_includes = parse_project_includes(argc, argv);
 
-    CommonOptionsParser& OptionsParser = *CommonOptionsParser::create(argc, argv, CppmmCategory);
+    ExitOnError eoe;
+    CommonOptionsParser OptionsParser = eoe(CommonOptionsParser::create(argc, argv, CppmmCategory));
 
     switch (opt_verbosity) {
     case 0:
