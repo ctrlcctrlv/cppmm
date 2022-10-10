@@ -213,7 +213,7 @@ void write_record(fmt::ostream& out, const NodeRecord* node_record, fmt::ostream
 
     std::string derive = get_derive_attr(node_record);
     if (derive.empty()) {
-        derive = "Clone";
+        derive = "Debug, Clone";
     }
 
     if (bt == BindType::OpaquePtr) {
