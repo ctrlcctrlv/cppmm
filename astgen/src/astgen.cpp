@@ -143,7 +143,7 @@ int main(int argc_, const char** argv_) {
     // grab any user-specified include directories from the command line
     cppmm::PROJECT_INCLUDES = parse_project_includes(argc, argv, cwd);
 
-    CommonOptionsParser OptionsParser(argc, argv, CppmmCategory);
+    CommonOptionsParser& OptionsParser = *CommonOptionsParser::create(argc, argv, CppmmCategory);
 
     // Set up logging
     switch (opt_verbosity) {
